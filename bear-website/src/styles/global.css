@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts - Replace with your chosen font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+/* CSS Variables from theme system */
+:root {
+  /* Default colors (will be overridden by theme) */
+  --color-primary: #2D1E0F;
+  --color-secondary: #D66F00;
+  --color-accent: #FF3A00;
+  --color-background: #1A1A18;
+  --color-surface: #2A2A28;
+  --color-text: #F5F5F0;
+  --color-textAlt: #BFB5A3;
+
+  /* Font family fallbacks */
+  font-family: 'Monument Extended', 'Inter', system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* App container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Apply transition to all elements for theme changes */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Collection-specific root styles */
+body.collection-primal {
+  /* Primal-specific global styles */
+}
+
+body.collection-ethereal {
+  /* Ethereal-specific global styles */
+}
+
+body.collection-techno {
+  /* Techno-specific global styles */
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Loading indicators */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--color-accent);
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

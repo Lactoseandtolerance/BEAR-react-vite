@@ -1,0 +1,157 @@
+@keyframes earthquake {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-5px, -5px);
+    }
+    30% {
+      transform: translate(5px, 5px);
+    }
+    50% {
+      transform: translate(-5px, 5px);
+    }
+    70% {
+      transform: translate(5px, -5px);
+    }
+    90% {
+      transform: translate(-5px, 0);
+    }
+  }
+  
+  @keyframes growl {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slash {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    50% {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  
+  /* Ethereal animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      filter: brightness(1);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      filter: brightness(1.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  @keyframes dissolve {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Techno animations */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-3px, 3px);
+    }
+    40% {
+      transform: translate(-3px, -3px);
+    }
+    60% {
+      transform: translate(3px, 3px);
+    }
+    80% {
+      transform: translate(3px, -3px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes scan {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+  
+  /* Collection-specific animation applications */
+  .collection-primal .animate-collection {
+    animation: earthquake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  
+  .collection-ethereal .animate-collection {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .collection-techno .animate-collection {
+    animation: glitch 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+  
+  /* Button hover animations based on collection */
+  .collection-primal .btn:hover {
+    animation: growl 0.5s ease-in-out;
+  }
+  
+  .collection-ethereal .btn:hover {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .collection-techno .btn:hover {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Page transition animations based on collection */
+  .collection-primal .page-transition {
+    animation: slash 0.8s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  
+  .collection-ethereal .page-transition {
+    animation: dissolve 1s ease-in-out forwards;
+  }
+  
+  .collection-techno .page-transition {
+    animation: scan 0.7s linear forwards;
+    background-image: linear-gradient(to bottom, rgba(0,240,255,0.2) 0%, rgba(0,0,0,0) 100%);
+    background-size: 100% 1000%;
+  }
